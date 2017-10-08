@@ -1,0 +1,63 @@
+<html>
+<body bgcolor="green">
+  <style type="text/css">
+     div.img cardImg{width:8%; height: auto}
+  </style>
+  <script src="deck.js"></script>
+  <script src="player.js"></script>
+  <script src="dealer.js"></script>
+  <script src="blackjack.js"></script>
+  <script type="text/javascript">
+      var blackjack = new BlackJack();
+  </script>
+  <h1 align="center" style="background-color:black;color:white;font-size:70px">BlackJack</h1>
+  <div class="cardImg">
+	 <h1>Dealer's Cards</h1>
+         <img src="cards/back.png" alt="Back of Card" id="dealer1">
+	 <img src="cards/back.png" alt="Back of Card" id="dealer2">
+	 <img src="cards/back.png" alt="Back of Card" id="dealer3">
+	 <img src="cards/back.png" alt="Back of Card" id="dealer4">
+	 <img src="cards/back.png" alt="Back of Card" id="dealer5">
+	 <img src="cards/back.png" alt="Back of Card" id="dealer6">
+	 <img src="cards/back.png" alt="Back of Card" id="dealer7">
+  </div>
+  <div>
+     Dealer Score: 
+	 <input type="text" id="dealerScore" style="width:50px" readonly>
+	 <h3 id="dealerStatus">    <h3>
+  </div>
+  <div class="cardImg">
+	 <h1 style="color:yellow">Player's Cards</h1>
+         <img src="cards/back.png" alt="Back of Card" id="blank1">
+	 <img src="cards/back.png" alt="Back of Card" id="blank2">
+	 <img src="cards/back.png" alt="Back of Card" id="blank3">
+	 <img src="cards/back.png" alt="Back of Card" id="blank4">
+	 <img src="cards/back.png" alt="Back of Card" id="blank5">
+	 <img src="cards/back.png" alt="Back of Card" id="blank6">
+	 <img src="cards/back.png" alt="Back of Card" id="blank7">
+  </div>
+  <div>
+     <button id="standButton" disabled onclick="blackjack.stand()">Stand</button>
+     <button id="hitButton" onclick="blackjack.hit();" disabled>Hit</button>
+     <button id="dealButton"onclick="blackjack.deal()">Deal</button>
+  </div>
+  <div>
+         Player Score: 
+	 <input type="text" id="playerScore" style="width:50px" readonly>
+	 <br>
+	 Player Money: 
+	 <input type="text" id="playerMoney" readonly>
+	 Player Bet: 
+	 <input type="text" id="playerBet" onchange="blackjack.betChange()">
+	 <br>
+	 <br>
+	 Card Count:
+	 <input type="text" id="cardCount" style="width:50px" readonly>
+	 <h2 id="playerStatus">    <h2>
+	 <h2 id="msg" style="color:blue">    <h2>
+  </div>
+  <script>
+     blackjack.setValues();
+  </script>
+</body>
+</html>
